@@ -51,6 +51,7 @@ canvas { display: block; width: 100%; height: auto; touch-action: manipulation; 
 .item-scores li { display: flex; justify-content: space-between; gap: 8px; padding-bottom: 5px; border-bottom: 1px dashed rgba(63,146,151,.22); font-size: 14px; }
 .item-scores strong { color: #d65d40; white-space: nowrap; }
 .overlay { position: absolute; inset: 0; display: grid; place-items: center; padding: 20px; background: rgba(34, 88, 94, .45); }
+.overlay[hidden] { display: none; }
 .dialog { width: min(410px, 100%); padding: 30px; text-align: center; border: 3px solid #ffc857; background: var(--paper); box-shadow: 7px 7px 0 #398087; }
 .dialog h1 { margin: 0 0 12px; font-size: 30px; color: #246070; }
 .dialog p { margin: 8px 0; font-size: 17px; }
