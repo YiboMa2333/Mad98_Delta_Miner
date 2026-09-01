@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="原创 Canvas 藏品钩爪小游戏">
+  <title>藏品钩爪</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="game-header">
+      <div class="brand"><span>DELTA</span> MINER</div>
+      <div class="stats" aria-live="polite">
+        <div><small>关卡</small><strong id="level-value">1</strong></div>
+        <div><small>金币</small><strong id="score-value">0</strong></div>
+        <div><small>目标</small><strong id="target-value">0</strong></div>
+        <div><small>时间</small><strong id="time-value">--</strong></div>
+      </div>
+      <div class="controls">
+        <button id="start-button" type="button">开始游戏</button>
+        <button id="pause-button" type="button" disabled>暂停</button>
+        <button id="reset-button" type="button" class="quiet-button">重置进度</button>
+      </div>
+    </header>
+    <section class="canvas-wrap" aria-label="游戏画面">
+      <canvas id="game-canvas" width="1280" height="720">你的浏览器不支持 Canvas。</canvas>
+      <div id="overlay" class="overlay" hidden></div>
+    </section>
+    <p class="hint">点击画面或按空格发射钩爪</p>
+    <section class="item-scores" aria-labelledby="item-scores-title">
+      <h2 id="item-scores-title">藏品金币</h2>
+      <ul id="item-score-list"></ul>
+    </section>
+  </main>
+  <script src="./js/config.js"></script>
+  <script src="./js/storage.js"></script>
+  <script src="./js/assets.js"></script>
+  <script src="./js/levelManager.js"></script>
+  <script src="./js/hook.js"></script>
+  <script src="./js/game.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>
