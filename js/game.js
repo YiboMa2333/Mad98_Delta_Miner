@@ -75,7 +75,7 @@
       const targetScore = this.level.targetScore;
       const passed = game.levelManager.isLevelPassed(this.level);
       if (passed) {
-        game.levelManager.advance();
+        game.levelManager.advance(targetScore);
         this.showResult(true, cumulativeScore, targetScore);
       } else {
         resetProgress();
@@ -95,7 +95,7 @@
       const hasNextLevel = Boolean(game.levelManager.getCurrentConfig());
       const title = passed ? "挑战成功！" : "挑战失败";
       const action = passed && hasNextLevel ? "下一关" : passed ? "查看通关" : "重新挑战";
-      this.ui.overlay.innerHTML = `<div class="dialog"><h1>${title}</h1><p>本关获得：${this.level.score} 金币</p><p>本关目标：${targetScore} 金币</p><p>累计金币：${cumulativeScore}</p><div class="dialog-actions"><button type="button" data-action="continue">${action}</button></div></div>`;
+      this.ui.overlay.innerHTML = `<div class="dialog"><h1>${title}</h1><div class="dialog-actions"><button type="button" data-action="continue">${action}</button></div><p>本关获得：${this.level.score} 金币</p><p>本关目标：${targetScore} 金币</p><p>累计金币：${cumulativeScore}</p></div>`;
       this.ui.overlay.hidden = false;
     }
 

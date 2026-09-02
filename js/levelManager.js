@@ -33,9 +33,10 @@
     return items;
   }
 
-  // 每局目标为本次刷新藏品总积分的 60%。
+  // 首关目标为本关总积分的 70%；后续关卡叠加上一关的目标积分。
   function getLevelTarget(items) {
-    return Math.ceil(items.reduce((total, item) => total + item.value, 0) * 0.6);
+    const totalItemScore = items.reduce((total, item) => total + item.value, 0);
+    return GAME_PROGRESS.previousTargetScore + Math.ceil(totalItemScore * 0.7);
   }
 
   game.levelManager = {
@@ -50,7 +51,8 @@
     isLevelPassed(level) {
       return Boolean(level && level.score >= level.targetScore);
     },
-    advance() {
+    advance(targetScore) {
+      GAME_PROGRESS.previousTargetScore = targetScore;
       GAME_PROGRESS.currentLevel += 1;
       GAME_PROGRESS.highestLevel = Math.max(GAME_PROGRESS.highestLevel, GAME_PROGRESS.currentLevel);
       saveProgress();

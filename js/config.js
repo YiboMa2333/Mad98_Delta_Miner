@@ -30,7 +30,7 @@
     ],
 
     // =====================================================
-    // USER CONFIG: 在这里修改每关时间、藏品数量和生成概率；目标金币自动为本局藏品总价值的 60%
+    // USER CONFIG: 在这里修改每关时间、藏品数量和生成概率；首关目标为本局总价值的 70%，后续关卡叠加上一关目标
     // =====================================================
     levels: [
       { level: 1, duration: 60, itemCount: 10, spawnWeights: { collection_01: 35, collection_02: 30, collection_03: 20, collection_04: 10, collection_05: 5, collection_06: 5 } },

@@ -1,7 +1,7 @@
 (() => {
   "use strict";
   const STORAGE_KEY = "deltaMinerProgress";
-  const initialProgress = () => ({ currentLevel: 1, totalScore: 0, highestLevel: 1 });
+  const initialProgress = () => ({ currentLevel: 1, totalScore: 0, highestLevel: 1, previousTargetScore: 0 });
 
   window.loadProgress = function loadProgress() {
     try {

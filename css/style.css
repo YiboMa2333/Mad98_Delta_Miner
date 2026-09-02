@@ -52,10 +52,10 @@ canvas { display: block; width: 100%; height: auto; touch-action: manipulation; 
 .item-scores strong { color: #d65d40; white-space: nowrap; }
 .overlay { position: absolute; inset: 0; display: grid; place-items: center; padding: 20px; background: rgba(34, 88, 94, .45); }
 .overlay[hidden] { display: none; }
-.dialog { width: min(410px, 100%); padding: 30px; text-align: center; border: 3px solid #ffc857; background: var(--paper); box-shadow: 7px 7px 0 #398087; }
+.dialog { width: min(32%, 410px); padding: 24px; text-align: center; border: 3px solid #ffc857; background: var(--paper); box-shadow: 7px 7px 0 #398087; }
 .dialog h1 { margin: 0 0 12px; font-size: 30px; color: #246070; }
 .dialog p { margin: 8px 0; font-size: 17px; }
-.dialog .dialog-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.dialog .dialog-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 0 0 18px; }
 
 @media (max-width: 760px) {
   .game-shell { padding: 8px; }
@@ -69,4 +69,9 @@ canvas { display: block; width: 100%; height: auto; touch-action: manipulation; 
   .hint { display: none; }
   .item-scores { margin-top: 10px; padding: 10px; }
   .item-scores ul { grid-template-columns: 1fr; }
+  .overlay { padding: 4%; }
+  .dialog { width: 86%; padding: 12px; border-width: 2px; box-shadow: 4px 4px 0 #398087; }
+  .dialog h1 { margin-bottom: 7px; font-size: 20px; }
+  .dialog p { margin: 4px 0; font-size: 13px; }
+  .dialog .dialog-actions { margin-bottom: 9px; }
 }
